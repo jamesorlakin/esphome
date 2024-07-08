@@ -34,7 +34,7 @@ void LakinSwitch::write_state(bool state) {
   if (!state) {
     reg_val &= ~GCFG_OUTPUT_BIT;
   } else {
-    reg_val &= GCFG_OUTPUT_BIT;
+    reg_val |= (0x01) << GCFG_OUTPUT_POS;
   }
 
   ESP_LOGI(TAG, "Val Write %04x", reg_val);
