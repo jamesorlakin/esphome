@@ -30,8 +30,8 @@ void LakinSwitch::write_state(bool state) {
   uint32_t reg_val = REG_READ(gpio_cfg_addr);
 
   ESP_LOGI(TAG, "Val Read %04x", reg_val);
-  reg_val &= ~GCFG_OUTPUT_BIT;
-  ESP_LOGI(TAG, "Val Tweak %04x", reg_val);
+  // reg_val &= ~GCFG_OUTPUT_BIT;
+  // ESP_LOGI(TAG, "Val Tweak %04x", reg_val);
   reg_val |= (state ? 1 : 0 & 0x01) << GCFG_OUTPUT_POS;
   ESP_LOGI(TAG, "Val Write %04x", reg_val);
   REG_WRITE(gpio_cfg_addr, reg_val);
