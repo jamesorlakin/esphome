@@ -17,7 +17,7 @@ void LakinSwitch::write_state(bool state) {
 
   digitalWrite(22, state);
 
-  // this->publish_state(state);
+  this->publish_state(state);
 }
 
 }  // namespace lakin
