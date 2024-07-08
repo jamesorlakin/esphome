@@ -10,7 +10,7 @@ void LakinSwitch::dump_config() { LOG_SWITCH("", "Lakin", this); }
 void LakinSwitch::setup() {
   ESP_LOGI(TAG, "Setting up Lakin '%s'...", this->name_.c_str());
 
-  pinMode(22, INPUT);
+  pinMode(22, OUTPUT);
 }
 void LakinSwitch::write_state(bool state) {
   LOG_SWITCH("", state ? "On" : "Off", this);
