@@ -5,7 +5,8 @@ from esphome.components import output, switch
 from esphome.const import CONF_OUTPUT
 from .. import output_ns
 
-LakinSwitch = output_ns.class_("LakinSwitch", switch.Switch, cg.Component)
+lakin_ns = cg.esphome_ns.namespace("lakin")
+LakinSwitch = lakin_ns.class_("LakinSwitch", switch.Switch, cg.Component)
 
 CONFIG_SCHEMA = cv.all(
     cv.only_with_arduino,

@@ -2,7 +2,7 @@
 #include "esphome/core/log.h"
 
 namespace esphome {
-namespace output {
+namespace lakin {
 
 static const char *const TAG = "lakin.switch";
 
@@ -18,5 +18,5 @@ void LakinSwitch::write_state(bool state) {
   this->publish_state(state);
 }
 
-}  // namespace output
+}  // namespace lakin
 }  // namespace esphome
