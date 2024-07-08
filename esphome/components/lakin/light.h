@@ -119,8 +119,8 @@
 	#error "Minimum clockspeed for ARM ws2812 library is 8 Mhz!"
 #endif
 
-#if (F_CPU>60000000)
-	#error "Maximum clockspeed for ARM ws2812 library is 60 Mhz!"
+#if (F_CPU>120000000)
+	#error "Maximum clockspeed for ARM ws2812 library is 120 Mhz!"
 #endif
 
 

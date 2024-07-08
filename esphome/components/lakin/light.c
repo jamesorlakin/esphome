@@ -26,6 +26,7 @@
 #define ws2812_DEL4 ws2812_DEL2 ws2812_DEL2
 #define ws2812_DEL8 ws2812_DEL4 ws2812_DEL4
 #define ws2812_DEL16 ws2812_DEL8 ws2812_DEL8
+#define ws2812_DEL32 ws2812_DEL16 ws2812_DEL16
 
 
 void ws2812_sendarray(uint8_t *data, int datlen)
@@ -64,6 +65,9 @@ void ws2812_sendarray(uint8_t *data, int datlen)
 #endif
 #if (w1&16)
 			ws2812_DEL16
+#endif
+#if (w1&32)
+			ws2812_DEL32
 #endif
 			"		bcs one%=					\n\t"
 			"		str %[masklo], [%[clr]]		\n\t"
@@ -104,6 +108,9 @@ void ws2812_sendarray(uint8_t *data, int datlen)
 #endif
 #if (w3&16)
 			ws2812_DEL16
+#endif
+#if (w3&32)
+			ws2812_DEL32
 #endif
 
 			"		b 	ilop%=					\n\t"
