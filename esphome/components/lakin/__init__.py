@@ -3,7 +3,6 @@ import esphome.config_validation as cv
 from esphome import pins
 from esphome.components import output, switch
 from esphome.const import CONF_OUTPUT
-from .. import output_ns
 
 lakin_ns = cg.esphome_ns.namespace("lakin")
 LakinSwitch = lakin_ns.class_("LakinSwitch", switch.Switch, cg.Component)
