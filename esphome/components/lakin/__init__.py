@@ -7,7 +7,7 @@ from esphome.const import CONF_OUTPUT
 lakin_ns = cg.esphome_ns.namespace("lakin")
 LakinSwitch = lakin_ns.class_("LakinSwitch", switch.Switch, cg.Component)
 
-CONFIG_SCHEMA = cv.all(
+CONFIG_SCHEMA = cv.All(
     cv.only_with_arduino,
     switch.switch_schema(LakinSwitch)
     # .extend(
