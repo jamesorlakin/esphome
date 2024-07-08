@@ -13,7 +13,7 @@ void LakinSwitch::setup() {
   pinMode(22, OUTPUT);
 }
 void LakinSwitch::write_state(bool state) {
-  LOG_SWITCH("", state ? "On" : "Off", this);
+  LOG_SWITCH(TAG, "Requested %S", state ? "On" : "Off");
 
   digitalWrite(22, state);
 
