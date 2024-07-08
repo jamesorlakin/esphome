@@ -25,13 +25,13 @@ void LakinSwitch::write_state(bool state) {
   ESP_LOGI(TAG, "Requested %s", state ? "On" : "Off");
 
   volatile uint32_t *gpio_cfg_addr = (volatile uint32_t *)(REG_GPIO_CFG_BASE_ADDR + PIN_NUM * 4);
-  ESP_LOGI(TAG, "Address %d", gpio_cfg_addr);
+  ESP_LOGI(TAG, "Address %032x", gpio_cfg_addr);
 
   uint32_t reg_val = REG_READ(gpio_cfg_addr);
 
   reg_val &= ~GCFG_OUTPUT_BIT;
   reg_val |= (state ? 1 : 0 & 0x01) << GCFG_OUTPUT_POS;
-  ESP_LOGI(TAG, "Val %d", reg_val);
+  ESP_LOGI(TAG, "Val %032x", reg_val);
   REG_WRITE(gpio_cfg_addr, reg_val);
 
   this->publish_state(state);
