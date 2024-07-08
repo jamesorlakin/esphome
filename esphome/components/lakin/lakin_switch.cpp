@@ -8,7 +8,7 @@ static const char *const TAG = "lakin.switch";
 
 void LakinSwitch::dump_config() { LOG_SWITCH("", "Lakin", this); }
 void LakinSwitch::setup() {
-  LOG_SWITCH(TAG, "Setting up Lakin '%s'...");
+  ESP_LOGI(TAG, "Setting up Lakin '%s'...", this->name_.c_str());
 
   pinMode(22, INPUT);
 }
