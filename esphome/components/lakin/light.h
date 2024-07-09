@@ -8,8 +8,6 @@
 #ifndef LIGHT_WS2812_H_
 #define LIGHT_WS2812_H_
 
-#include <cstdint>
-
 #ifdef __cplusplus
  extern "C" {
 #endif
