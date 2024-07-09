@@ -1,7 +1,6 @@
 #include "lakin_switch.h"
 #include <cstdint>
 #include "esphome/core/log.h"
-#include "light.c"
 
 #define REG_GPIO_CFG_BASE_ADDR (0x0802800)
 #define GCFG_OUTPUT_POS 1
